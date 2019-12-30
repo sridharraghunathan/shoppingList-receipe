@@ -1,0 +1,16 @@
+<div class="container">
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewReceipe()"> New Receipe</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <app-receipe-item *ngFor=" let receipe of receipes; let i = index" 
+        [index] = "i"
+        [receipedata]="receipe"></app-receipe-item>
+    </div>
+
+</div>
+</div>

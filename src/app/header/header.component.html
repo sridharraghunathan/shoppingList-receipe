@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg  bg-light navbar-light  ">
+    <a class="nav-brand">Receipe Book</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse"
+    [ngbCollapse]="isNavbarCollapsed"
+    id="navbarContent">
+        <ul class="nav navbar-nav mr-auto">
+            <li *ngIf="!isAuthenticated"> <a routerLinkActive="active" class="nav-link"
+                    routerLink="authenticate">Authenticate</a></li>
+            <li *ngIf="isAuthenticated"> <a routerLinkActive="active" class="nav-link" routerLink="receipe">Receipes
+                </a> </li>
+            <li> <a routerLinkActive="active" class="nav-link" routerLink="shopping-list">Shopping List </a> </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#" (click)="onSelect('shopping')" >Shopping List</a>
+            </li> -->
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="isAuthenticated" class="nav-link">
+                <a (click)="onLogout()">Logout</a>
+            </li>
+            <li *ngIf="isAuthenticated" class="nav-item dropdown" appDropDown #r="appDropDown">
+                <a class="nav-link dropdown-toggle mr-auto" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Manage
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{'show' : r.isOpen}">
+                    <li><a class="dropdown-item" (click)="onFetchData()" style="cursor: pointer;">Fetch Data</a></li>
+                    <li><a class="dropdown-item" (click)="onsaveReceipe()" style="cursor: pointer;">Save Data</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

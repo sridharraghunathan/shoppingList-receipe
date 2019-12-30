@@ -1,0 +1,49 @@
+<div class="row">
+        <div class="col-lg-12">
+                <h2>{{selectDatareceipe.name}}</h2>
+        </div>
+</div>
+
+<div class="row">
+        <div class="col-lg-12">
+                <div class="btn-group" appDropDown #r="appDropDown">
+                        <button type="button" class="btn btn-primary dropdown-toggle">
+                                Manage
+                        </button>
+                        <ul class="dropdown-menu" [ngClass]="{'show':r.isOpen}">
+                                <li>
+                                        <a class="dropdown-item" (click)="onIngredData()"
+                                                style="cursor: pointer;">ShoppingList</a>
+                                </li>
+                                <li>
+                                        <a class="dropdown-item" (click)="onEditData()" style="cursor: pointer;">Edit
+                                                Receipe</a>
+
+                                </li>
+                                <li>
+                                        <a class="dropdown-item" (click)="onDeleteData()"
+                                                style="cursor: pointer;">Delete
+                                                Receipe</a>
+                                </li>
+                        </ul>
+                </div>
+        </div>
+</div>
+
+<div class="row">
+        <div class="col-lg-12">
+                {{selectDatareceipe.description}}
+        </div>
+</div>
+
+<div class="row">
+        <div class="col-lg-12">
+                <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let ingredient of selectDatareceipe.ingredients">
+                                {{ingredient.Ingredientname}} - {{ingredient.amount}}
+                        </li>
+                </ul>
+
+        </div>
+
+</div>

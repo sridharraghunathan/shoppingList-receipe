@@ -1,0 +1,13 @@
+.list-group-item
+{
+ font-family: monospace;
+ font-weight: 120px;
+ color: black;
+ background-color:white;
+}
+.active
+{
+    background-color:greenyellow;
+}
+
+ 

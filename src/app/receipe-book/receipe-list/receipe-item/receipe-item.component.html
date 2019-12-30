@@ -1,0 +1,19 @@
+<br>
+  <a 
+        [routerLink]="[index]"
+        routerLinkActive="active"
+        style="cursor: pointer;" 
+        class="list-group-item clear-fix">
+        <div class="row">
+            <div class="col-md-7 float-left">
+                <h4 class="list-group-item-heading">{{receipedata.name}}</h4>
+                <p  class="list-group-item-text">{{receipedata.description}}</p>
+            </div>
+            <div class="col-md-5 mr-auto">
+                <img class="img-responsive" src="{{receipedata.imagePath}}" alt="{{ receipedata.name }}"  
+                style="max-height:60px">
+            </div>
+        </div>
+        </a>
+    
+ 
